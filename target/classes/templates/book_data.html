@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/html">
+<head th:replace="head :: head_section"></head>
+<body>
+<div th:replace="content :: content_section_title"></div>
+
+<!---->
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Podstawowe dane</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive" id="proTeamScroll" tabindex="2"
+                         style="height: auto; overflow: hidden; outline: none;">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Tytuł</th>
+                                <th>Rok wydania</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td th:text="${book.title}"></td>
+                                <td th:text="${book.year_of_production}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Autorzy książki</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive" tabindex="2" style="height: auto; overflow: hidden; outline: none;">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Imie</th>
+                                <th>Nazwisko</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr data-th-each="ba : ${book_author}">
+                                <td th:text="${ba.name}"></td>
+                                <td th:text="${ba.surname}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Dodaj autora książki</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive" tabindex="2" style="height: auto; overflow: hidden; outline: none;">
+                        <table class="table table-striped">
+                            <thead>
+                            <form th:action="@{/book_add_author}" method="post">
+                            <thead>
+                            <input type="number" name="bookId" th:value="${book.id}" class="form-control" hidden>
+                            <tr>
+                                <select type="number" name="authorId" required class="btn btn-sm form-control"
+                                        style="background-color: #f2f2f2">
+                                    <option th:each="c : ${all_authors}"
+                                            th:value="${c.id}"
+                                            th:text="${c.getName()}">
+                                    </option>
+                                </select>
+                            </tr>
+                            </thead>
+                            <thead>
+                            <tr>
+                                <button type="submit" class="btn btn-success btn-sm form-control">
+                                    <i aria-hidden="true">Dodaj</i>
+                                </button>
+                            </tr>
+                            </thead>
+                            </form>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-12 col-sm-12 col-md-12">-->
+<!--            <div class="card">-->
+<!--                <div class="card-header">-->
+<!--                    <h4>Osoby które przeczytały książkę</h4>-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <div class="table-responsive" tabindex="2" style="height: auto; overflow: hidden; outline: none;">-->
+<!--                        <table class="table table-striped">-->
+<!--                            <thead>-->
+<!--                            <tr>-->
+<!--                                <th>Imie</th>-->
+<!--                                <th>Nazwisko</th>-->
+<!--                            </tr>-->
+<!--                            </thead>-->
+<!--                            <tbody>-->
+<!--                            <tr data-th-each="person : ${people}">-->
+<!--                                <td th:text="${person.name}"></td>-->
+<!--                                <td th:text="${person.surname}"></td>-->
+<!--                            </tr>-->
+<!--                            </tbody>-->
+<!--                        </table>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+</body>
+<footer th:replace="footer :: footer_section"></footer>
+</html>

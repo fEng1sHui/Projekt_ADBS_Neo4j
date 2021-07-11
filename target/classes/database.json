@@ -1,0 +1,117 @@
+//{"type":"node","id":"0","labels":["Person"],"properties":{"name":"Jan","Surname":"Kowalski","age":45}}
+//{"type":"node","id":"1","labels":["Person"],"properties":{"name":"Tomek","Surname":"Tomaszewski","age":27}}
+//{"type":"node","id":"2","labels":["Person"],"properties":{"name":"Bożena","Surname":"Szymańska","age":34}}
+//{"type":"node","id":"3","labels":["Movie"],"properties":{"title":"Piraci z Karaibów: Klątwa „Czarnej Perły\"","year_of_production":2003}}
+//{"type":"node","id":"4","labels":["Movie"],"properties":{"title":"Kick-Ass","year_of_production":2010}}
+//{"type":"node","id":"5","labels":["Movie"],"properties":{"title":"Tajne przez poufne","year_of_production":2008}}
+//{"type":"node","id":"6","labels":["Category"],"properties":{"name":"Fantasy"}}
+//{"type":"node","id":"7","labels":["Category"],"properties":{"name":"Romans"}}
+//{"type":"node","id":"8","labels":["Category"],"properties":{"name":"Sensacyjny"}}
+//{"type":"node","id":"9","labels":["Category"],"properties":{"name":"Wojenny"}}
+//{"type":"node","id":"20","labels":["Person"],"properties":{"name":"Agnieszka","Surname":"Gruby","age":21}}
+//{"type":"node","id":"21","labels":["Person"],"properties":{"name":"Jakub","Surname":"Potok","age":56}}
+//{"type":"node","id":"22","labels":["Category"],"properties":{"name":"Akcja"}}
+//{"type":"node","id":"23","labels":["Movie"],"properties":{"title":"Władca pierścieni: Drużyna pierścienia","year_of_production":2001}}
+//{"type":"node","id":"24","labels":["Movie"],"properties":{"year_of_production":2004,"title":"Przed zachodem słońca"}}
+//{"type":"node","id":"25","labels":["Movie"],"properties":{"title":"Władca Pierścieni. Powrót króla","year_of_production":2003}}
+//{"type":"node","id":"26","labels":["Movie"],"properties":{"title":"Władca Pierścieni. Dwie wieże","year_of_production":2002}}
+//{"type":"node","id":"27","labels":["Movie"],"properties":{"title":"Angielska robota","year_of_production":2008}}
+//{"type":"node","id":"28","labels":["Movie"],"properties":{"year_of_production":2005,"title":"Batman – początek"}}
+//{"type":"node","id":"29","labels":["Movie"],"properties":{"title":"Dystrykt 9","year_of_production":2009}}
+//{"type":"node","id":"40","labels":["Person"],"properties":{"name":"Janina","Surname":"Kurek","age":37}}
+//{"type":"node","id":"41","labels":["Person"],"properties":{"name":"Stanisław","Surname":"Porada","age":61}}
+//{"type":"node","id":"42","labels":["Person"],"properties":{"name":"Piotr","Surname":"Kubisiak","age":42}}
+//{"type":"node","id":"43","labels":["Person"],"properties":{"name":"Katarzyna","Surname":"Glegola","age":56}}
+//{"type":"node","id":"44","labels":["Movie"],"properties":{"title":"WALL-E","year_of_production":2008}}
+//{"type":"node","id":"45","labels":["Category"],"properties":{"name":"Komedia"}}
+//{"type":"node","id":"46","labels":["Category"],"properties":{"name":"Przygodowy"}}
+//{"type":"node","id":"60","labels":["Movie"],"properties":{"title":"Avatar","year_of_production":2009}}
+//{"type":"node","id":"61","labels":["Movie"],"properties":{"title":"Shrek","year_of_production":2001}}
+//{"type":"node","id":"62","labels":["Movie"],"properties":{"year_of_production":2004,"title":"Zakochany bez pamięci"}}
+//{"type":"node","id":"63","labels":["Movie"],"properties":{"title":"Mroczny Rycerz","year_of_production":2008}}
+//{"type":"node","id":"64","labels":["Movie"],"properties":{"title":"Bękarty Wojny","year_of_production":2009}}
+//{"type":"node","id":"65","labels":["Category"],"properties":{"name":"Animacja"}}
+//{"type":"node","id":"80","labels":["Movie"],"properties":{"title":"Shrek 2","year_of_production":2004}}
+//{"type":"node","id":"81","labels":["Category"],"properties":{"name":"Horror"}}
+//{"type":"node","id":"82","labels":["Category"],"properties":{"name":"Sci-fi"}}
+//{"type":"node","id":"83","labels":["Category"],"properties":{"name":"Thriller"}}
+//{"type":"node","id":"84","labels":["Category"],"properties":{"name":"Superbohaterski"}}
+//{"type":"node","id":"100","labels":["Category"],"properties":{"name":"Dramat"}}
+//{"type":"node","id":"101","labels":["Category"],"properties":{"name":"Kryminał"}}
+//{"type":"node","id":"102","labels":["Category"],"properties":{"name":"Familijny"}}
+//{"id":"0","type":"relationship","label":"MOVIE_TYPE","start":{"id":"3","labels":["Movie"]},"end":{"id":"6","labels":["Category"]}}
+//{"id":"1","type":"relationship","label":"MOVIE_TYPE","start":{"id":"60","labels":["Movie"]},"end":{"id":"82","labels":["Category"]}}
+//{"id":"2","type":"relationship","label":"MOVIE_TYPE","start":{"id":"61","labels":["Movie"]},"end":{"id":"65","labels":["Category"]}}
+//{"id":"3","type":"relationship","label":"MOVIE_TYPE","start":{"id":"63","labels":["Movie"]},"end":{"id":"84","labels":["Category"]}}
+//{"id":"4","type":"relationship","label":"MOVIE_TYPE","start":{"id":"64","labels":["Movie"]},"end":{"id":"9","labels":["Category"]}}
+//{"id":"5","type":"relationship","label":"FRIEND","start":{"id":"0","labels":["Person"]},"end":{"id":"42","labels":["Person"]}}
+//{"id":"6","type":"relationship","label":"FRIEND","start":{"id":"43","labels":["Person"]},"end":{"id":"0","labels":["Person"]}}
+//{"id":"7","type":"relationship","label":"VIEWED","start":{"id":"43","labels":["Person"]},"end":{"id":"61","labels":["Movie"]}}
+//{"id":"8","type":"relationship","label":"FRIEND","start":{"id":"2","labels":["Person"]},"end":{"id":"20","labels":["Person"]}}
+//{"id":"9","type":"relationship","label":"VIEWED","start":{"id":"2","labels":["Person"]},"end":{"id":"61","labels":["Movie"]}}
+//{"id":"10","type":"relationship","label":"FRIEND","start":{"id":"21","labels":["Person"]},"end":{"id":"42","labels":["Person"]}}
+//{"id":"11","type":"relationship","label":"VIEWED","start":{"id":"40","labels":["Person"]},"end":{"id":"27","labels":["Movie"]}}
+//{"id":"12","type":"relationship","label":"VIEWED","start":{"id":"41","labels":["Person"]},"end":{"id":"61","labels":["Movie"]}}
+//{"id":"13","type":"relationship","label":"VIEWED","start":{"id":"1","labels":["Person"]},"end":{"id":"61","labels":["Movie"]}}
+//{"id":"20","type":"relationship","label":"MOVIE_TYPE","start":{"id":"3","labels":["Movie"]},"end":{"id":"46","labels":["Category"]}}
+//{"id":"21","type":"relationship","label":"MOVIE_TYPE","start":{"id":"3","labels":["Movie"]},"end":{"id":"22","labels":["Category"]}}
+//{"id":"22","type":"relationship","label":"MOVIE_TYPE","start":{"id":"4","labels":["Movie"]},"end":{"id":"84","labels":["Category"]}}
+//{"id":"23","type":"relationship","label":"MOVIE_TYPE","start":{"id":"4","labels":["Movie"]},"end":{"id":"22","labels":["Category"]}}
+//{"id":"24","type":"relationship","label":"MOVIE_TYPE","start":{"id":"4","labels":["Movie"]},"end":{"id":"45","labels":["Category"]}}
+//{"id":"25","type":"relationship","label":"MOVIE_TYPE","start":{"id":"26","labels":["Movie"]},"end":{"id":"46","labels":["Category"]}}
+//{"id":"26","type":"relationship","label":"MOVIE_TYPE","start":{"id":"63","labels":["Movie"]},"end":{"id":"82","labels":["Category"]}}
+//{"id":"27","type":"relationship","label":"VIEWED","start":{"id":"0","labels":["Person"]},"end":{"id":"25","labels":["Movie"]}}
+//{"id":"28","type":"relationship","label":"VIEWED","start":{"id":"43","labels":["Person"]},"end":{"id":"3","labels":["Movie"]}}
+//{"id":"29","type":"relationship","label":"VIEWED","start":{"id":"43","labels":["Person"]},"end":{"id":"44","labels":["Movie"]}}
+//{"id":"30","type":"relationship","label":"VIEWED","start":{"id":"0","labels":["Person"]},"end":{"id":"61","labels":["Movie"]}}
+//{"id":"40","type":"relationship","label":"MOVIE_TYPE","start":{"id":"5","labels":["Movie"]},"end":{"id":"45","labels":["Category"]}}
+//{"id":"41","type":"relationship","label":"MOVIE_TYPE","start":{"id":"5","labels":["Movie"]},"end":{"id":"101","labels":["Category"]}}
+//{"id":"42","type":"relationship","label":"MOVIE_TYPE","start":{"id":"23","labels":["Movie"]},"end":{"id":"6","labels":["Category"]}}
+//{"id":"43","type":"relationship","label":"MOVIE_TYPE","start":{"id":"23","labels":["Movie"]},"end":{"id":"46","labels":["Category"]}}
+//{"id":"44","type":"relationship","label":"MOVIE_TYPE","start":{"id":"24","labels":["Movie"]},"end":{"id":"100","labels":["Category"]}}
+//{"id":"45","type":"relationship","label":"MOVIE_TYPE","start":{"id":"24","labels":["Movie"]},"end":{"id":"7","labels":["Category"]}}
+//{"id":"46","type":"relationship","label":"MOVIE_TYPE","start":{"id":"25","labels":["Movie"]},"end":{"id":"6","labels":["Category"]}}
+//{"id":"47","type":"relationship","label":"MOVIE_TYPE","start":{"id":"25","labels":["Movie"]},"end":{"id":"46","labels":["Category"]}}
+//{"id":"48","type":"relationship","label":"MOVIE_TYPE","start":{"id":"28","labels":["Movie"]},"end":{"id":"82","labels":["Category"]}}
+//{"id":"49","type":"relationship","label":"MOVIE_TYPE","start":{"id":"29","labels":["Movie"]},"end":{"id":"100","labels":["Category"]}}
+//{"id":"50","type":"relationship","label":"MOVIE_TYPE","start":{"id":"44","labels":["Movie"]},"end":{"id":"102","labels":["Category"]}}
+//{"id":"51","type":"relationship","label":"MOVIE_TYPE","start":{"id":"61","labels":["Movie"]},"end":{"id":"102","labels":["Category"]}}
+//{"id":"52","type":"relationship","label":"VIEWED","start":{"id":"0","labels":["Person"]},"end":{"id":"23","labels":["Movie"]}}
+//{"id":"53","type":"relationship","label":"VIEWED","start":{"id":"43","labels":["Person"]},"end":{"id":"25","labels":["Movie"]}}
+//{"id":"54","type":"relationship","label":"VIEWED","start":{"id":"21","labels":["Person"]},"end":{"id":"26","labels":["Movie"]}}
+//{"id":"55","type":"relationship","label":"FRIEND","start":{"id":"40","labels":["Person"]},"end":{"id":"20","labels":["Person"]}}
+//{"id":"56","type":"relationship","label":"VIEWED","start":{"id":"42","labels":["Person"]},"end":{"id":"26","labels":["Movie"]}}
+//{"id":"57","type":"relationship","label":"FRIEND","start":{"id":"41","labels":["Person"]},"end":{"id":"1","labels":["Person"]}}
+//{"id":"58","type":"relationship","label":"VIEWED","start":{"id":"41","labels":["Person"]},"end":{"id":"5","labels":["Movie"]}}
+//{"id":"59","type":"relationship","label":"VIEWED","start":{"id":"1","labels":["Person"]},"end":{"id":"27","labels":["Movie"]}}
+//{"id":"60","type":"relationship","label":"MOVIE_TYPE","start":{"id":"26","labels":["Movie"]},"end":{"id":"6","labels":["Category"]}}
+//{"id":"61","type":"relationship","label":"MOVIE_TYPE","start":{"id":"27","labels":["Movie"]},"end":{"id":"8","labels":["Category"]}}
+//{"id":"62","type":"relationship","label":"MOVIE_TYPE","start":{"id":"28","labels":["Movie"]},"end":{"id":"22","labels":["Category"]}}
+//{"id":"63","type":"relationship","label":"MOVIE_TYPE","start":{"id":"29","labels":["Movie"]},"end":{"id":"82","labels":["Category"]}}
+//{"id":"64","type":"relationship","label":"MOVIE_TYPE","start":{"id":"44","labels":["Movie"]},"end":{"id":"82","labels":["Category"]}}
+//{"id":"65","type":"relationship","label":"MOVIE_TYPE","start":{"id":"62","labels":["Movie"]},"end":{"id":"100","labels":["Category"]}}
+//{"id":"66","type":"relationship","label":"MOVIE_TYPE","start":{"id":"62","labels":["Movie"]},"end":{"id":"82","labels":["Category"]}}
+//{"id":"67","type":"relationship","label":"MOVIE_TYPE","start":{"id":"63","labels":["Movie"]},"end":{"id":"22","labels":["Category"]}}
+//{"id":"68","type":"relationship","label":"VIEWED","start":{"id":"0","labels":["Person"]},"end":{"id":"64","labels":["Movie"]}}
+//{"id":"69","type":"relationship","label":"VIEWED","start":{"id":"20","labels":["Person"]},"end":{"id":"27","labels":["Movie"]}}
+//{"id":"70","type":"relationship","label":"VIEWED","start":{"id":"2","labels":["Person"]},"end":{"id":"24","labels":["Movie"]}}
+//{"id":"71","type":"relationship","label":"FRIEND","start":{"id":"21","labels":["Person"]},"end":{"id":"2","labels":["Person"]}}
+//{"id":"72","type":"relationship","label":"VIEWED","start":{"id":"40","labels":["Person"]},"end":{"id":"4","labels":["Movie"]}}
+//{"id":"80","type":"relationship","label":"MOVIE_TYPE","start":{"id":"27","labels":["Movie"]},"end":{"id":"101","labels":["Category"]}}
+//{"id":"81","type":"relationship","label":"MOVIE_TYPE","start":{"id":"28","labels":["Movie"]},"end":{"id":"84","labels":["Category"]}}
+//{"id":"82","type":"relationship","label":"MOVIE_TYPE","start":{"id":"44","labels":["Movie"]},"end":{"id":"65","labels":["Category"]}}
+//{"id":"100","type":"relationship","label":"VIEWED","start":{"id":"0","labels":["Person"]},"end":{"id":"28","labels":["Movie"]}}
+//{"id":"101","type":"relationship","label":"MOVIE_TYPE","start":{"id":"80","labels":["Movie"]},"end":{"id":"65","labels":["Category"]}}
+//{"id":"102","type":"relationship","label":"MOVIE_TYPE","start":{"id":"80","labels":["Movie"]},"end":{"id":"45","labels":["Category"]}}
+//{"id":"103","type":"relationship","label":"MOVIE_TYPE","start":{"id":"61","labels":["Movie"]},"end":{"id":"45","labels":["Category"]}}
+//{"id":"104","type":"relationship","label":"MOVIE_TYPE","start":{"id":"80","labels":["Movie"]},"end":{"id":"102","labels":["Category"]}}
+//{"id":"105","type":"relationship","label":"VIEWED","start":{"id":"20","labels":["Person"]},"end":{"id":"29","labels":["Movie"]}}
+//{"id":"106","type":"relationship","label":"VIEWED","start":{"id":"2","labels":["Person"]},"end":{"id":"80","labels":["Movie"]}}
+//{"id":"107","type":"relationship","label":"VIEWED","start":{"id":"41","labels":["Person"]},"end":{"id":"25","labels":["Movie"]}}
+//{"id":"108","type":"relationship","label":"VIEWED","start":{"id":"41","labels":["Person"]},"end":{"id":"64","labels":["Movie"]}}
+//{"id":"120","type":"relationship","label":"FRIEND","start":{"id":"0","labels":["Person"]},"end":{"id":"20","labels":["Person"]}}
+//{"id":"140","type":"relationship","label":"VIEWED","start":{"id":"21","labels":["Person"]},"end":{"id":"60","labels":["Movie"]}}
+//{"id":"141","type":"relationship","label":"VIEWED","start":{"id":"21","labels":["Person"]},"end":{"id":"61","labels":["Movie"]}}
+//{"id":"142","type":"relationship","label":"FRIEND","start":{"id":"40","labels":["Person"]},"end":{"id":"42","labels":["Person"]}}
+//{"id":"143","type":"relationship","label":"VIEWED","start":{"id":"40","labels":["Person"]},"end":{"id":"3","labels":["Movie"]}}
+//{"id":"144","type":"relationship","label":"FRIEND","start":{"id":"1","labels":["Person"]},"end":{"id":"2","labels":["Person"]}}
