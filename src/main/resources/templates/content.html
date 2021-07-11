@@ -1,0 +1,44 @@
+<div class="container-fluid" xmlns:th="http://www.thymeleaf.org" th:fragment="content_section_title"
+     xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+    <ul class="header-panel">
+
+        <div class="page-name">
+            <i> Projekt ADBS</i>
+        </div>
+    </ul>
+
+    <nav class="menu">
+        <ul class='menu'>
+            <li>
+                <a th:classappend="${#httpServletRequest.getRequestURI() == '/' && #request.getQueryString()== null ? 'active':''}"
+                   href="/">
+                    <i class="fas fa-home"></i>
+                    <i>Strona domowa</i>
+                </a>
+            </li>
+            <li>
+                <a th:classappend="${#httpServletRequest.getRequestURI() == '/' && #request.getQueryString()== null ? 'active':''}"
+                   href="/user_form">
+                    <i>Tworzenie uzytkownika</i>
+                </a>
+            </li>
+            <li>
+                <a th:classappend="${#httpServletRequest.getRequestURI() == '/' && #request.getQueryString()== null ? 'active':''}"
+                   href="/book_form">
+                    <i>Dodawanie książek</i>
+                </a>
+            </li>
+            <li>
+                <a th:classappend="${#httpServletRequest.getRequestURI() == '/' && #request.getQueryString()== null ? 'active':''}"
+                   href="/author_form">
+                    <i>Dodawanie autorów</i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+</div>

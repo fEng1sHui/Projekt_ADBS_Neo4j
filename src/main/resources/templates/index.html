@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/html">
+<head th:replace="head :: head_section"></head>
+<body>
+<div th:replace="content :: content_section_title"></div>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"/>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Lista użytkowników</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive" id="proTeamScroll" tabindex="2"
+                         style="height: auto; overflow: hidden; outline: none;">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Imię</th>
+                                <th>Nazwisko</th>
+                                <th>Wiek</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr data-th-each="user : ${users}">
+                                <td th:text="${user.name}"></td>
+                                <td th:text="${user.surname}"></td>
+                                <td th:text="${user.age}"></td>
+                                <td>
+                                    <form th:action="@{/person_data}" method="get">
+
+                                        <div class="col-sm-10 col-md-8 form-group">
+                                            <input type="number" name="personId" th:value="${user.id}"
+                                                   class="form-control"
+                                                   hidden>
+                                        </div>
+                                        <div class="col-sm-10 col-md-10 form-group">
+                                            <button type="submit" class="btn btn-success btn-sm form-control">
+                                                <i aria-hidden="true">Podgląd</i>
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Lista książek</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive" tabindex="2" style="height: auto; overflow: hidden; outline: none;">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Tytuł</th>
+                                <th>Data wydania</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr data-th-each="book : ${books}">
+                                <td th:text="${book.getTitle()}"></td>
+                                <td th:text="${book.getYear_of_production()}"></td>
+
+                                <td>
+                                    <form th:action="@{/book_data}" method="get">
+
+                                        <div class="col-sm-10 col-md-8 form-group">
+                                            <input type="number" name="bookId" th:value="${book.id}"
+                                                   class="form-control"
+                                                   hidden>
+                                        </div>
+                                        <div class="col-sm-10 col-md-10 form-group">
+                                            <button type="submit" class="btn btn-success btn-sm form-control">
+                                                <i aria-hidden="true">Podgląd danych</i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Lista autorów</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive" tabindex="2" style="height: auto; overflow: hidden; outline: none;">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Imię</th>
+                                <th>Nazwisko</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr data-th-each="author : ${authors}">
+                                <td th:text="${author.getName()}"></td>
+                                <td th:text="${author.getSurname()}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Wczytywanie i usuwanie danych</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive" tabindex="2" style="height: auto; overflow: hidden; outline: none;">
+
+                        <!--                        <form class="form-inline" th:action="@{/import_data}" method="post" style="margin-top: 5px">-->
+                        <!--                            <div class="form-group mx-sm-3 mb-2">-->
+                        <!--                                <input type="text" class="form-control" id="path" name="path" placeholder="Podaj ścieżkę pliku">-->
+                        <!--                            </div>-->
+                        <!--                            <button type="submit" class="btn btn-primary mb-2">Załaduj plik z danymi</button>-->
+                        <!--                        </form>-->
+                        <a href="/delete_data_from_database" class="btn btn-success mb-2" style="margin-left: 5px">Usuń
+                            wszystkie dane z
+                            bazy</a>
+
+                        <!--                        <div class="alert alert-danger" role="alert" th:if="${failed_loading_database} == 'True'"-->
+                        <!--                             style="margin-left: 15px; margin-right: 15px">-->
+                        <!--                            Nie udało się wczytać pliku-->
+                        <!--                        </div>-->
+                        <!--                        <div class="alert alert-success" role="alert" th:if="${failed_loading_database} == 'False'"-->
+                        <!--                             style="margin-left: 15px; margin-right: 15px">-->
+                        <!--                            Udało się wczytać plik-->
+                        <!--                        </div>-->
+
+                        <form class="form-inline" th:action="@{/import_library}" method="post" style="margin-top: 5px">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <input type="text" class="form-control" name="path"
+                                       placeholder="Podaj ścieżkę do listy książek">
+                            </div>
+                            <button type="submit" class="btn btn-success mb-2">Wgraj książki do systemu</button>
+                        </form>
+                        <div class="alert alert-danger" role="alert" th:if="${failed_loading_books} == 'True'"
+                             style="margin-left: 15px; margin-right: 15px">
+                            Nie udało się wczytać pliku
+                        </div>
+                        <div class="alert alert-success" role="alert" th:if="${failed_loading_books} == 'False'"
+                             style="margin-left: 15px; margin-right: 15px">
+                            Udało się wczytać plik
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+</body>
+<footer th:replace="footer :: footer_section"></footer>
+</html>
